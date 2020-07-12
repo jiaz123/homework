@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象</title>
+</head>
+<body>
+    <script>
+        //1. Object.assign(obj1,obj2,obj3,......)可用于对象的拼接
+        // var obj1={name:"zhangsan"}
+        // var obj2={age:18}
+        // var obj3={say:function(){
+        //     console.log("说话")
+        // }}
+        // console.log(Object.assign(obj1,obj2,obj3))
+        // console.log(obj1,obj2)
+        //对象的拷贝
+        // var obj = {name: '张三', age: 20}
+        // var newObj = Object.assign({},obj)
+        // console.log(newObj)
+        //2、Object.is(a,b)     用于判断两个值是否相同,与===类似，但又不完全一样
+        // console.log(Object.is(+0,-0))
+        // console.log(Object.is(NaN,NaN))
+        //3. obj.prototype.isPrototypeOf(b)
+        //确定一个对象是否存在于另一个对象的原型链中
+        // function a(){
+        // }
+        // var b = new a()
+        //4. Object.defineProperty()，直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。console.log(a.prototype.isPrototypeOf(b));
+        // var obj = new Object()
+        // Object.defineProperty(obj, 'name', {
+        //     configurable: false,
+        //     writable: true,
+        //     enumerable: true,
+        //     value: '张三'
+        // })
+        // console.log(obj.name)
+        //5. Object.defineProperties(),直接在一个对象上定义一个或多个新的属性或修改现有属性，并返回该对象。
+        // var obj = new Object()
+        // Object.defineProperties(obj, {
+        //     name: {
+        //         value: '张三',
+        //         configurable: false,
+        //         writable: true,
+        //         enumerable: true
+        //     },
+        //     age: {
+        //         value: 18,
+        //         configurable: true
+        //     }
+        // })
+        // console.log(obj.name, obj.age)
+        //6. Object.freeze(obj),阻止修改现有属性的特性和值，并阻止添加新属性
+        // var obj={name:'张三',age:18}
+        // Object.freeze(obj)
+        // obj.name='李四'
+        // obj.sex='男'
+        // console.log(obj)    
+    
+        //  对象的遍历 
+    
+        //1.for in 循环
+        // var obj={
+        //     name:'jz',
+        //     age:20,
+        //     say:function(){
+        //         console.log('hello')
+        //     }
+        // }
+        // for (var i in obj) {
+        //     console.log(obj[i])
+        // }
+
+        //2. Object.keys(obj)
+        // var obj = {'a':'123','b':'345'}
+        // console.log(Object.keys(obj))  //['a','b']
+
+        // 如果键名是数字，则按从小到大排列
+        // var obj1 = { 100: "a", 2: "b", 7: "c"}
+        // console.log(Object.keys(obj1))
+        // var obj2 = Object.create({}, { getFoo : { value : function () { return this.foo } } })
+        // obj2.foo = 1
+        // console.log(Object.keys(obj2)) 
+
+        //3. Object.getOwnPropertyNames(obj)
+        //4. Object.getOwnPropertySymbols(obj)
+        var myclass={
+            name:'jz',
+            age:20,
+            say:function(){
+                console.log('hello')
+            },
+            sex : Symbol("key1")
+
+        }
+        // console.log(Object.getOwnPropertyNames(myclass))
+        // console.log(Object.getOwnPropertySymbols(myclass))
+        //5. Reflect.ownKeys(obj)
+        // console.log(Reflect.ownKeys(myclass))
+        //6. Object.values(obj)
+        console.log(Object.values(myclass))
+
+
+
+    </script>
+
+</body>
+</html> 

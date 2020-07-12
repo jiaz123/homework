@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串</title>
+</head>
+<body>
+    <script>
+        // var test = "hello world JavaScript"
+
+        // str.charAt(index)
+        // console.log(test.charAt(1))
+
+        // str.charCodeAt(index)
+        // console.log(test.charCodeAt(1))
+
+        // String.fromCharCode(97)
+        // console.log(String.fromCharCode(97))
+        
+        // str.indexOf('a')
+        // console.log(test.indexOf('a'))
+        // console.log(test.indexOf('h'))
+        
+        // str.lastIndexOf('a')
+        // console.log(test.lastIndexOf('t'))
+        
+        // str.replace("替换的内容","替换后的内容")
+        // console.log(test.replace('a','b'))
+
+        
+        // str.slice(起始下标,结束下标)
+        // console.log(test.slice(5.8))
+        
+        // str.substring(起始下标,结束下标)
+        // console.log(test.substring(5,8))
+        
+        // str.substr(起始下标，截取的长度)
+        // console.log(test.substr(5,3))
+        
+        // str.split('')
+        // console.log(test.split(''))
+        
+        // str.toLowerCase()
+        // 将str字符串中的字符转化为小写，不修改原字符串
+        // console.log(test.toLowerCase())
+        
+        // str.toUpperCase()
+        // 将str字符串中的字符转化为大写
+        // console.log(test.toUpperCase())
+        
+        // str.trim()
+        // 将字符串左右空格去除，可用于接收表单数据 IE9以下不识别
+        // 返回值： 去掉左右空格之后的字符串
+        // var str ="   adc   sascd  asscx   "
+        // console.log(str.trim)
+        
+        // str.match()
+        // 在字符串内检索指定的值，或找到一个或多个正则表达式的匹配
+        // console.log(test.match('a'))
+        // console.log(test.match('$j'))
+        
+        // str.concat('a','b','c')
+        // 功能： 用于连接两个或多个字符串,与数组中的concat方法很象，不会修改原字符串
+        // console.log(test.concat("a","b,","c"))
+        
+        // str.padStart() 、str.padEnd()
+        // 功能： 向字符串开头(padStart)或结尾(padEnd)添加字符，使字符串达到指定的长度。返回在原字符串开头或末尾填充指定的填充字符串直到目标长度所形成的新字符串
+        // 参数1: 当前字符串需要填充到的目标长度。如果这个数值小于当前字符串的长度，则返回当前字符串本身。
+        // 参数2: （可选）填充字符串。如果字符串太长，使填充后的字符串长度超过了目标长度，则只保留最左侧的部分，其他部分会被截断。
+        // 注意事项
+        // 1.不写第二个参数填充字符串，则默认用空格填充
+        // 2.填充字符串会自动重复直到达到目标长度
+        // 3.如果原字符串长度已经大于等于目标长度，则直接返回原字符串
+        // console.log('abc'.padStart(10))
+        // console.log('abc'.padStart(10, "123")) 
+        // console.log('abc'.padEnd(10))     
+        // console.log('abc'.padEnd(10, "123"))
+
+        // 使用场景：得到具有固定长度的数据 （时间、二进制数、十六进制数）
+        // 获取时间，如果只有一位则前面用0填充
+        var time = new Date()
+        var h = String(time.getHours()).padStart(2,'0')
+        var m = String(time.getMinutes()).padStart(2,'0')
+        var s = String(time.getSeconds()).padStart(2,'0')
+        console.log(`${h}:${m}:${s}`)
+    </script>
+
+</body>
+</html> 
