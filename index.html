@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.focus{
+				width: 100%;
+				height: 390px;
+				margin-top: 115px;
+				overflow: hidden;
+			}
+			.large{
+				width: 8841px;
+				height: 390px;
+			}
+			.large a{
+				display: block;
+				width: 1263px;
+				height: 390px;
+				float: left;
+			}
+			
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var large = document.querySelector(".large");
+				var as = large.getElementsByTagName("a");
+				var width = parseInt(getComputedStyle(as[0],null).width);
+				var num = -1;
+				// var index = 1;
+				var timer;
+				var run = function(){
+					 num++;
+					 if(num==0||num==60||num==120||num==180||num==240||num==300){
+						 clearInterval(timer);
+						 setTimeout(function(){
+							 timer = setInterval(run,5);
+							 console.log(num);
+						 },3000);
+					 }else if(num==360){
+						 clearInterval(timer);
+						 num=0;
+						 large.style.marginLeft = -num*width/60+"px";
+						 setTimeout(function(){
+							timer = setInterval(run,5);
+							console.log(num);
+						 },3000);
+					 }
+					 large.style.marginLeft = -num*width/60+"px";
+				};
+				timer = setInterval(run,5);
+			}
+		</script>
+	</head>
+	<body style="height: 1000px;">
+		<div class="focus">
+			<div class="large">
+				<a href="" style="background: url(banner-hyhj.jpg) no-repeat center center;"></a>
+				<a href="" style="background: url(banner-xtyr.jpg) no-repeat center center;"></a>
+				<a href="" style="background: url(banner00.jpg) no-repeat center center;"></a>
+				<a href="" style="background: url(banner2.jpg) no-repeat center center;"></a>
+				<a href="" style="background: url(banner3.jpg) no-repeat center center;"></a>
+				<a href="" style="background: url(banner4.jpg) no-repeat center center;"></a>
+				<a href="" style="background: url(banner-hyhj.jpg) no-repeat center center;"></a>
+			</div>
+		</div>
+	</body>
+</html>
